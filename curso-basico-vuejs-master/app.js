@@ -1,28 +1,31 @@
 new Vue({
-  el: '#app',
-  data () {
-    return {
-      name: 'Bitcoin',
-      img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
-      changePercent: -10,
-      pricesWithDays: [
-        { day: 'Lunes', value: 8400 },
-        { day: 'Martes', value: 7900 },
-        { day: 'Miercoles', value: 8200 },
-        { day: 'Jueves', value: 9000 },
-        { day: 'Viernes', value: 9400 },
-        { day: 'Sabado', value: 10000 },
-        { day: 'Domingo', value: 10200 },
-      ],
+    el: '#app',
+    data() {
+        return {
+            name: 'Bitcoin',
+            img: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+            changePercent: -10,
 
-      showPrices: false
-    }
-  },
+            price: 8400,
 
-  methods: {
-    toggleShowPrices () {
-      this.showPrices = !this.showPrices
+            pricesWithDays: [
+                {day: 'Lunes', value: 8400},
+                {day: 'Martes', value: 7900},
+                {day: 'Miercoles', value: 8200},
+                {day: 'Jueves', value: 9000},
+                {day: 'Viernes', value: 9400},
+                {day: 'Sabado', value: 10000},
+                {day: 'Domingo', value: 10200},
+            ],
+
+            showPrices: false
+        }
+    },
+
+    methods: {
+        toggleShowPrices() {
+            this.showPrices = !this.showPrices
+        }
     }
-  }
 
 })
