@@ -39,17 +39,20 @@ Vue.component('CoinDetail', {
             v-bind:src="coin.img" v-bind:alt="coin.name">
         <h1
             v-bind:class="coin.changePercent > 0 ? 'green': 'red'">
-        {{ title }}
-        <span v-if="coin.changePercent > 0"> 👍 </span>
-        <span v-else-if="coin.changePercent < 0"> (☞ﾟヮﾟ)☞ </span>
-        <span v-else> ✌✌ </span>
+            {{ title }}
+            <span v-if="coin.changePercent > 0"> 👍 </span>
+            <span v-else-if="coin.changePercent < 0"> (☞ﾟヮﾟ)☞ </span>
+            <span v-else> ✌✌ </span>
 
-        <span v-on:click="toggleShowPrices">
+            <span v-on:click="toggleShowPrices">
               {{ showPrices ? '👨🏿' : '‍🦰'}}</span>
         </h1>
         
         <input type="number" v-model="value">
         <span>{{ convertedValue }}</span>
+        
+        <slot name="text"></slot>
+        <slot name="link"></slot>
         
         <ul v-show=showPrices>
             <li
